@@ -2,7 +2,7 @@
 
 A browser extension that spots Boeing aircraft on flight booking sites and slaps a big red warning on them.
 
-> My heart go out to the victims of Air India flight 171. ❤️
+> My heart goes out to the victims of Air India flight 171. ❤️
 
 ![Boeing Flight Detector Demo Image](./images/demo.png)
 

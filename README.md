@@ -33,6 +33,6 @@ Found a bug? Want to add more sites? PRs welcome. Let's make flight booking tran
 
 This is just info, not flight advice. Boeing planes still fly every day. Your risk tolerance is your business.
 
----
+## Built with ❤️ by
 
-*Built by someone who thinks you deserve to know what you're flying on.*
+[Pankaj Tanwar](https://twitter.com/the2ndfloorguy), and checkout his [other side-hustles](https://pankajtanwar.in/side-hustles)

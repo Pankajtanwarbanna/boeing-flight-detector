@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Boeing Flight Detector",
+    "author": "Pankaj Tanwar",
+    "version": "1.0",
+    "description": "Instantly identifies and highlights Boeing aircraft on flight booking sites.",
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.cleartrip.com/flights/results*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}

@@ -4,6 +4,8 @@ A browser extension that spots Boeing aircraft on flight booking sites and slaps
 
 > My heart go out to the victims of Air India flight 171. ❤️
 
+![Boeing Flight Detector Demo Image](./images/demo.png)
+
 ## Why This Exists?
 
 Boeing's been making headlines for all the wrong reasons lately. Door plugs flying off mid-flight, crashes, investigations, whistleblowers... the list goes on. 

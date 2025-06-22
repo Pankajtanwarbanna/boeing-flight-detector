@@ -130,6 +130,10 @@ const boeingAircrafts = {
     "B717": "Boeing 717-200"
 };
 
+function getQueryParams(url) {
+    return new URL(url).searchParams;
+}
+
 function getDepartDate(url) {
     const params = new URL(url).searchParams;
     return params.get('depart_date');
@@ -138,9 +142,22 @@ function getDepartDate(url) {
 async function fetchAirCraftData() {
     try {
         const pageUrl = window.location.href;
-        const departDate = getDepartDate(pageUrl);
-        const apiUrl = `https://www.cleartrip.com/flight/search/v2?from=BLR&source_header=BLR&to=JAI&destination_header=JAI&depart_date=${departDate}&class=Economy&adults=1&childs=0&infants=0&mobileApp=true&intl=n&responseType=jsonV3&source=DESKTOP&utm_currency=INR&sft=&return_date=&carrier=&cfw=false&multiFare=true&isFFSC=false`;
+        const params = getQueryParams(pageUrl);
 
+        const from = params.get('from');
+        const to = params.get('to');
+
+        const travelClass = params.get('class') || 'Economy';
+        const adults = params.get('adults') || '1';
+        const childs = params.get('childs') || '0';
+        const infants = params.get('infants') || '0';
+
+        const isIntl = params.get('intl') || 'n';
+        const isMultiFare = params.get('isMultiFare') || 'true';
+        const isFFSC = params.get('isFFSC') || 'false';
+
+        const departDate = getDepartDate(pageUrl);
+        const apiUrl = `https://www.cleartrip.com/flight/search/v2?from=${from}&source_header=${from}&to=${to}&destination_header=${to}&depart_date=${departDate}&class=${travelClass}&adults=${adults}&childs=${childs}&infants=${infants}&mobileApp=true&intl=${isIntl}&responseType=jsonV3&source=DESKTOP&utm_currency=INR&sft=&return_date=&carrier=&cfw=false&multiFare=${isMultiFare}&isFFSC=${isFFSC}`;
         const response = await fetch(apiUrl, {
             method: 'GET',
             headers: { 'app-agent': 'DESKTOP' }
